@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shankar Food Products</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f3ee;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 20px;
+    background: white;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin: 5px;
+}
+
+.subtitle {
+    color: #c76d4c;
+}
+
+/* PRODUCTS */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.card img {
+    width: 100px;
+}
+
+.price {
+    color: #c76d4c;
+    font-weight: bold;
+}
+
+/* FORM */
+.form-box {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+}
+
+.btn {
+    background: #c76d4c;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* CONTACT */
+.contact {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.contact p {
+    margin: 6px 0;
+}
+</style>
+
+<script>
+function orderNow() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let product = document.getElementById("product").value;
+    let qty = document.getElementById("qty").value;
+
+    if (!name || !phone || !qty) {
+        alert("Please fill all details!");
+        return;
+    }
+
+    let msg = `🛒 New Order
+Name: ${name}
+Phone: ${phone}
+Product: ${product}
+Quantity: ${qty}`;
+
+    // open WhatsApp for primary number
+    window.open("https://wa.me/919752979797?text=" + encodeURIComponent(msg));
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="./logo.png" class="logo">
+    <h2 class="title">Shankar Food Products</h2>
+    <p class="subtitle">Factory Direct • Best Quality</p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="container">
+
+<div class="card"><img src="./atta.png"><h4>Atta 5kg</h4><p class="price">₹350</p></div>
+<div class="card"><img src="./atta.png"><h4>Atta 1kg</h4><p class="price">₹70</p></div>
+<div class="card"><img src="./suji400g.png"><h4>Suji 400g</h4><p class="price">₹36</p></div>
+<div class="card"><img src="./suji500g.png"><h4>Suji 500g</h4><p class="price">₹45</p></div>
+<div class="card"><img src="./maida400g.png"><h4>Maida 400g</h4><p class="price">₹30</p></div>
+<div class="card"><img src="./maida500g.png"><h4>Maida 500g</h4><p class="price">₹35</p></div>
+<div class="card"><img src="./maida1kg.png"><h4>Maida 1kg</h4><p class="price">₹70</p></div>
+<div class="card"><img src="./dalia500g.png"><h4>Dalia 500g</h4><p class="price">₹60</p></div>
+<div class="card"><img src="./besan1kg.png"><h4>Besan 1kg</h4><p class="price">₹100</p></div>
+
+</div>
+
+<!-- ORDER FORM -->
+<div class="form-box">
+    <h3>Place Order</h3>
+
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="number" id="phone" placeholder="Your Phone Number">
+
+    <select id="product">
+        <option>Atta 5kg</option>
+        <option>Atta 1kg</option>
+        <option>Suji 400g</option>
+        <option>Suji 500g</option>
+        <option>Maida 400g</option>
+        <option>Maida 500g</option>
+        <option>Maida 1kg</option>
+        <option>Dalia 500g</option>
+        <option>Besan 1kg</option>
+    </select>
+
+    <input type="number" id="qty" placeholder="Quantity">
+
+    <button onclick="orderNow()" class="btn">Order on WhatsApp</button>
+</div>
+
+<!-- CONTACT DETAILS -->
+<div class="contact">
+    <h3>Contact Us</h3>
+
+    <p>📞 Phone 1: <a href="tel:+919752979797">+91 9752979797</a></p>
+    <p>📞 Phone 2: <a href="tel:+919039414111">+91 9039414111</a></p>
+    <p>📞 Phone 3: <a href="tel:+919039414111">+91 9039414111</a></p>
+
+    <p>💬 WhatsApp 1: <a href="https://wa.me/919752979797" target="_blank">Chat on WhatsApp</a></p>
+    <p>💬 WhatsApp 2: <a href="https://wa.me/919039414111" target="_blank">Chat on WhatsApp</a></p>
+    <p>💬 WhatsApp 3: <a href="https://wa.me/919039414111" target="_blank">Chat on WhatsApp</a></p>
+
+    <p>📍 Address: UDHYOG VIHAR CHORAHATA INDUSTRIAL AREA PLOT NO.32-40 REWA-486001(M.P.)</p>
+    <p>🕒 Timing: 9 AM - 8 PM</p>
+</div>
+
+</body>
+</html>
